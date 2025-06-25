@@ -11,4 +11,5 @@ class BooksType(DjangoObjectType):
 
 class Query (graphene.ObjectType):
     all_books = graphene.List(BooksType)
+    def resolve_all_books(root, info):
 schema = graphene.Schema(query=Query)
